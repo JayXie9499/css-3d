@@ -1,0 +1,17 @@
+{
+	"name": "css-3d",
+	"description": "A small demo showing simple CSS 3D cubes with X/Y spin animations.",
+	"author": "Jay",
+	"license": "MIT",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"vite": "^7.3.1"
+	}
+}

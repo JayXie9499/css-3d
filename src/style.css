@@ -1,0 +1,130 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+	width: 100dvw;
+	height: 100dvh;
+	background-color: #333;
+	color: white;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#title {
+	margin-bottom: 2rem;
+	user-select: none;
+	-moz-user-select: none;
+}
+
+.gallery {
+  margin-bottom: 1rem;
+	width: 90%;
+	max-width: 50rem;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 1rem;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+h2 {
+  margin-bottom: 1rem;
+	text-align: center;
+}
+
+.stage {
+	background-color: #111;
+  border-radius: 1rem;
+	aspect-ratio: 1/1;
+	width: 15rem;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.scene {
+	aspect-ratio: 1/1;
+	width: 8rem;
+	height: auto;
+	position: relative;
+	perspective: 60rem;
+}
+
+.scene * {
+	transform-style: preserve-3d;
+	transform-origin: center center;
+	position: absolute;
+	inset: 0;
+}
+
+.x-spin .cube {
+	rotate: y 30deg;
+  animation: x-spin 6s linear infinite;
+}
+
+.y-spin .cube {
+  rotate: x 30deg;
+  animation: y-spin 6s linear infinite;
+}
+
+.side {
+	border: 0.25rem solid wheat;
+}
+
+.top {
+	transform: rotateX(90deg) translateZ(4rem);
+}
+
+.bottom {
+	transform: rotateX(90deg) translateZ(-4rem);
+}
+
+.left {
+	transform: rotateY(90deg) translateZ(-4rem);
+}
+
+.right {
+	transform: rotateY(90deg) translateZ(4rem);
+}
+
+.front {
+	transform: translateZ(4rem);
+}
+
+.rear {
+	transform: translateZ(-4rem);
+}
+
+@keyframes x-spin {
+  100% {
+    rotate: y 390deg;
+  }
+}
+
+@keyframes y-spin {
+  100% {
+    rotate: x 390deg;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
